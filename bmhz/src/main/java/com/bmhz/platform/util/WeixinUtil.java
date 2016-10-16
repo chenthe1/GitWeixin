@@ -1,6 +1,5 @@
 package com.bmhz.platform.util;
 
-
 import java.io.InputStream;
 import java.io.Writer;
 import java.math.BigInteger;
@@ -18,7 +17,7 @@ import org.dom4j.io.SAXReader;
 
 import com.aixuexiao.model.Article;
 import com.aixuexiao.model.ExamMark;
-import com.aixuexiao.model.Message;
+import com.bmhz.platform.wmm.model.Message;
 import com.aixuexiao.model.Reply;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;

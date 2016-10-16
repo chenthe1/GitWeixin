@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.aixuexiao.model.Exam;
-import com.aixuexiao.model.ExamMark;
+/*import com.aixuexiao.model.Exam;
+import com.aixuexiao.model.ExamMark;*/
 
 /**
  * 考试相关工具类
@@ -18,7 +18,7 @@ public class ExamUtil {
 	 * @param exam 考试对象
 	 * @return
 	 */
-	public static Exam  sortExamMark(Exam exam){
+	/*public static Exam  sortExamMark(Exam exam){
 		List<ExamMark> ems = exam.getExamMarks();
 		Collections.sort(ems);//对分数进行排序
 		BigDecimal topmark = null,lowestmark = null,total = new BigDecimal(0);
@@ -35,6 +35,6 @@ public class ExamUtil {
 		exam.setTopmark(topmark);
 		exam.setLowestmark(lowestmark);
 		return exam;
-	}
+	}*/
 	
 }

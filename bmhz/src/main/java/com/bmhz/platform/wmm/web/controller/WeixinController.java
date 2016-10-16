@@ -92,9 +92,10 @@ public class WeixinController {
 			String back = WeixinUtil.replyToXml(reply);
 			System.out.println(back);
 			return back;
-		*/}else{
+		}else{*/
 			return "error";
 		}
+			return null;
 	}
 	
 	
