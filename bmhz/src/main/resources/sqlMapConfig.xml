@@ -23,7 +23,7 @@
         <!-- 数据库超过25000秒仍未响应则超时 -->  
         <setting name="defaultStatementTimeout" value="25000" />  
     </settings>  
-    <typeAliases>
+    <!-- <typeAliases>
    		 <typeAlias alias="Message"  type="com.aixuexiao.model.Message" />
    		 <typeAlias alias="Reply"  type="com.aixuexiao.model.Reply" />
    		 <typeAlias alias="Article"  type="com.aixuexiao.model.Article" />
@@ -33,8 +33,8 @@
    		 <typeAlias alias="ExamMark"  type="com.aixuexiao.model.ExamMark" />
    		 <typeAlias alias="StudentMessage"  type="com.aixuexiao.model.StudentMessage" />
    		 <typeAlias alias="ClassesNews"  type="com.aixuexiao.model.ClassesNews" />
-	</typeAliases>
-    <mappers>
+	</typeAliases> -->
+    <!-- <mappers>
     	<mapper resource="com/aixuexiao/dao/sqlmap/ReplyMapper.xml"/>
     	<mapper resource="com/aixuexiao/dao/sqlmap/MessageMapper.xml"/>
     	<mapper resource="com/aixuexiao/dao/sqlmap/StudentMapper.xml"/>
@@ -42,5 +42,5 @@
     	<mapper resource="com/aixuexiao/dao/sqlmap/StudentMessageMapper.xml"/>
     	<mapper resource="com/aixuexiao/dao/sqlmap/ClassesNewsMapper.xml"/>
     	<mapper resource="com/aixuexiao/dao/sqlmap/ClassesMapper.xml"/>
-    </mappers>
+    </mappers> -->
 </configuration>

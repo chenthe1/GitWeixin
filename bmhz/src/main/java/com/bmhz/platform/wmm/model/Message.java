@@ -10,7 +10,11 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
  * @author lizy
  */
 public  class Message implements Serializable{
-
+	/**
+	 * serial Version UID
+	 */
+	private static final long serialVersionUID = -1119268596751913129L;
+	
 	public static final String TEXT = "text";
 	public static final String IMAGE = "image";
 	public static final String LOCATION = "location";

@@ -15,10 +15,12 @@ import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import com.aixuexiao.model.Article;
-import com.aixuexiao.model.ExamMark;
+
+// import com.aixuexiao.model.Article;
+// import com.aixuexiao.model.ExamMark;
 import com.bmhz.platform.wmm.model.Message;
-import com.aixuexiao.model.Reply;
+import com.bmhz.platform.wmm.model.WeixinModel;
+// import com.aixuexiao.model.Reply;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
@@ -38,8 +40,8 @@ import com.thoughtworks.xstream.io.xml.XppDriver;
 public class WeixinUtil {
 	
 	
-	public static String singleExamMarkToString(ExamMark em){
-		if(null==em || em.getExam()==null)
+	public static String singleExamMarkToString(WeixinModel em){
+		if(null==em || em.getOpenId()==null)
 			return null;
 		StringBuilder sb = new StringBuilder();
 		return sb.toString();
@@ -72,7 +74,7 @@ public class WeixinUtil {
 	 * @param reply 回复消息对象
 	 * @return 返回符合微信接口的xml字符串
 	 */
-	public static String replyToXml(Reply reply){
+	/*public static String replyToXml(Reply reply){
 		String type = reply.getMsgType();
 		if(Reply.TEXT.equals(type)){
 			xstream.omitField(Reply.class, "articles");
@@ -90,9 +92,9 @@ public class WeixinUtil {
 		}
 		xstream.autodetectAnnotations(true);  
 		xstream.alias("xml", reply.getClass());
-		xstream.alias("item", new Article().getClass());
+		// xstream.alias("item", new Article().getClass());
 		return xstream.toXML(reply);
-	}
+	}*/
 	
 	/**
 	 * 存储数据的Map转换为对应的Message对象
