@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bmhz.platform.util.WeixinUtil;
+import com.bmhz.platform.wmm.model.Message;
+import com.bmhz.platform.wmm.model.Reply;
 import com.bmhz.platform.wmm.service.WeixinService;
 
 /**
@@ -37,11 +39,12 @@ public class WeixinController {
 	@Resource(name="weixinService")
 	private WeixinService weixinService;
 	
-	@RequestMapping(value="/bm/test",method=RequestMethod.GET,produces="text/html;charset=UTF-8")
+	// @RequestMapping(value="/bm/test",method=RequestMethod.GET,produces="text/html;charset=UTF-8")
+	@RequestMapping(value="/test",method=RequestMethod.GET,produces="text/html;charset=UTF-8")
 	@ResponseBody
 	public String test(HttpServletRequest request){
 		System.out.println("ddddddddddddddddddddd");
-		return weixinService.getWeixinById(2);
+		return weixinService.getWeixinById(2)+"DFFFFFFFFFDD";
 	}
 	
 	
@@ -50,10 +53,10 @@ public class WeixinController {
 	@ResponseBody
 	public String replyMessage(HttpServletRequest request){
 		//仅处理微信服务端发的请求
-		if (checkWeixinReques(request)) {/*
+		if (checkWeixinReques(request)) {
 			Map<String, String> requestMap = WeixinUtil.parseXml(request);
 			Message message = WeixinUtil.mapToMessage(requestMap);
-			weixinService.addMessage(message);//保存接受消息到数据库
+			// weixinService.addMessage(message); //保存接受消息到数据库
 			String replyContent = Reply.WELCOME_CONTENT;
 			String type = message.getMsgType();
 			if (type.equals(Message.TEXT)) {//仅处理文本回复内容
@@ -64,7 +67,7 @@ public class WeixinController {
 					String process = cs[1];//操作
 					try {
 						studentid = Integer.parseInt(cs[0]);
-						if("考试".equals(process)){
+						/*if("考试".equals(process)){
 							replyContent = weixinService.getSingleExamMarkStringByStudentId(studentid);
 						}else if("考试历史".equals(process)){
 							replyContent = weixinService.getExamMarkHistoryStringByStudentId(studentid);
@@ -76,7 +79,7 @@ public class WeixinController {
 							replyContent = weixinService.getSingleClassesNewsByStudentId(studentid);
 						}else if("动态历史".equals(process)){
 							replyContent = weixinService.getClassesNewsHistoryByStudentId(studentid);
-						} 
+						} */
 					} catch (NumberFormatException e) {
 						replyContent = Reply.ERROR_CONTENT;
 					}
@@ -89,17 +92,15 @@ public class WeixinController {
 			reply.setCreateTime(new Date());
 			reply.setMsgType(Reply.TEXT);
 			reply.setContent(replyContent);
-			weixinService.addReply(reply);//保存回复消息到数据库
+			// weixinService.addReply(reply); //保存回复消息到数据库
 			//将回复消息序列化为xml形式
 			String back = WeixinUtil.replyToXml(reply);
 			System.out.println(back);
 			return back;
-		}else{*/
+		}else{ 
 			return "error";
 		}
-			return null;
 	}
-	
 	
 	/**
 	 * 微信公众平台验证URL是否有效使用的接口
