@@ -101,7 +101,11 @@ public class WeixinController {
 	}
 	
 	
-	//微信公众平台验证url是否有效使用的接口
+	/**
+	 * 微信公众平台验证URL是否有效使用的接口
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping(value="/weixin",method=RequestMethod.GET,produces="text/html;charset=UTF-8")
 	@ResponseBody
 	public String initWeixinURL(HttpServletRequest request){

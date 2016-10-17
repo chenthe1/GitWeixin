@@ -8,19 +8,15 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-
-
-// import com.aixuexiao.model.Article;
+import com.bmhz.platform.wmm.model.Article;
 // import com.aixuexiao.model.ExamMark;
 import com.bmhz.platform.wmm.model.Message;
 import com.bmhz.platform.wmm.model.WeixinModel;
-// import com.aixuexiao.model.Reply;
+import com.bmhz.platform.wmm.model.Reply;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
@@ -39,7 +35,11 @@ import com.thoughtworks.xstream.io.xml.XppDriver;
  */
 public class WeixinUtil {
 	
-	
+	/**
+	 * 公众号
+	 * @param em
+	 * @return
+	 */
 	public static String singleExamMarkToString(WeixinModel em){
 		if(null==em || em.getOpenId()==null)
 			return null;
@@ -47,7 +47,10 @@ public class WeixinUtil {
 		return sb.toString();
 	}
 	
-	/*private static XStream xstream = new XStream(new XppDriver() {  
+	/**
+	 * XML转换
+	 */
+	private static XStream xstream = new XStream(new XppDriver() {  
         public HierarchicalStreamWriter createWriter(Writer out) {  
             return new PrettyPrintWriter(out) {  
                 // 对所有xml节点的转换都增加CDATA标记  
@@ -67,14 +70,14 @@ public class WeixinUtil {
                 }  
             };  
         }  
-    });  */
+    });  
 	
 	/**
 	 * 将回复消息对象转换成xml字符串
 	 * @param reply 回复消息对象
 	 * @return 返回符合微信接口的xml字符串
 	 */
-	/*public static String replyToXml(Reply reply){
+	public static String replyToXml(Reply reply){
 		String type = reply.getMsgType();
 		if(Reply.TEXT.equals(type)){
 			xstream.omitField(Reply.class, "articles");
@@ -92,9 +95,9 @@ public class WeixinUtil {
 		}
 		xstream.autodetectAnnotations(true);  
 		xstream.alias("xml", reply.getClass());
-		// xstream.alias("item", new Article().getClass());
+		xstream.alias("item", new Article().getClass());
 		return xstream.toXML(reply);
-	}*/
+	}
 	
 	/**
 	 * 存储数据的Map转换为对应的Message对象
@@ -134,7 +137,7 @@ public class WeixinUtil {
 	 * 解析request中的xml 并将数据存储到一个Map中返回
 	 * @param request
 	 */
-	/*public static Map<String, String> parseXml(HttpServletRequest request){
+	public static Map<String, String> parseXml(HttpServletRequest request){
 		Map<String, String> map = new HashMap<String, String>();
 		try {
 			InputStream inputStream = request.getInputStream();
@@ -151,8 +154,7 @@ public class WeixinUtil {
 			e.printStackTrace();
 		}
 		return map;
-	}*/
-
+	}
 	
 	/**
 	 * sha1加密算法
@@ -170,5 +172,4 @@ public class WeixinUtil {
 			return key;
 		}
 	}
-	
 }
