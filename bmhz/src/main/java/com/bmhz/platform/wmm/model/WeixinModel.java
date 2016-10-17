@@ -18,6 +18,9 @@ import java.util.List;
  */
 public class WeixinModel implements Serializable {
 	
+	/**
+	 * 
+	 */
 	private int id; 
 	// 微信标识 
 	private String openId;

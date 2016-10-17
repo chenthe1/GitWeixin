@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.bmhz.platform.wmm.dao">
+<mapper namespace="com.bmhz.platform.wmm.dao.WeixinDao">
 	
 	<select id="findWeixinById" parameterType="int" resultMap="weixinMap" >
 	   select id, openId, name, createTime, updateTime, status 
-	   from WeixinModel 
+	   from t_weixin_list 
 	   where id = #{id} 
 	</select> 
 	
-	<resultMap type="weixin" id="weixinMap">
+	<resultMap type="Weixin" id="weixinMap">
 		<id property="id" column="id"/>  
 		<result property="openId" column="openId"/>  
 		<result property="name" column="name"/>

@@ -6,10 +6,13 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Service;
+
 import com.bmhz.platform.wmm.dao.WeixinDao;
 import com.bmhz.platform.wmm.model.WeixinModel;
 import com.bmhz.platform.wmm.service.WeixinService;
 
+@Service("weixinService")
 public class WeixinServiceImpl implements WeixinService{
 	
 	@Resource(name="weixinDao")

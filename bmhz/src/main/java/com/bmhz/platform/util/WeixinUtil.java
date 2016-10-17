@@ -47,7 +47,7 @@ public class WeixinUtil {
 		return sb.toString();
 	}
 	
-	private static XStream xstream = new XStream(new XppDriver() {  
+	/*private static XStream xstream = new XStream(new XppDriver() {  
         public HierarchicalStreamWriter createWriter(Writer out) {  
             return new PrettyPrintWriter(out) {  
                 // 对所有xml节点的转换都增加CDATA标记  
@@ -67,7 +67,7 @@ public class WeixinUtil {
                 }  
             };  
         }  
-    });  
+    });  */
 	
 	/**
 	 * 将回复消息对象转换成xml字符串
@@ -134,7 +134,7 @@ public class WeixinUtil {
 	 * 解析request中的xml 并将数据存储到一个Map中返回
 	 * @param request
 	 */
-	public static Map<String, String> parseXml(HttpServletRequest request){
+	/*public static Map<String, String> parseXml(HttpServletRequest request){
 		Map<String, String> map = new HashMap<String, String>();
 		try {
 			InputStream inputStream = request.getInputStream();
@@ -151,7 +151,7 @@ public class WeixinUtil {
 			e.printStackTrace();
 		}
 		return map;
-	}
+	}*/
 
 	
 	/**

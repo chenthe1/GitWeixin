@@ -16,6 +16,10 @@ import java.io.Serializable;
  */
 public class ShopDevModel implements Serializable {
 	
+	/**
+	 * serial Version UID
+	 */
+	private static final long serialVersionUID = 1L;
 	private int shopId;
 	private int devId;
 	public int getShopId() {

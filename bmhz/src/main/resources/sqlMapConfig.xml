@@ -23,6 +23,14 @@
         <!-- 数据库超过25000秒仍未响应则超时 -->  
         <setting name="defaultStatementTimeout" value="25000" />  
     </settings>  
+    
+    <typeAliases>
+   		 <typeAlias alias="Weixin"  type="com.bmhz.platform.wmm.model.WeixinModel" />
+    </typeAliases>
+    <mappers>
+    	<mapper resource="om/bmhz/platform/wmm/dao/impl/WeixinMapper.xml"/>
+    </mappers>
+    
     <!-- <typeAliases>
    		 <typeAlias alias="Message"  type="com.aixuexiao.model.Message" />
    		 <typeAlias alias="Reply"  type="com.aixuexiao.model.Reply" />

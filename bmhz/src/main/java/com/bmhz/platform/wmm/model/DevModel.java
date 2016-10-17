@@ -18,6 +18,10 @@ import java.util.List;
  */
 public class DevModel implements Serializable {
 	
+	/**
+	 * serial Version UID
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id; 
 	private String name;
 	private String mac;
