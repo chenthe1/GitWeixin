@@ -25,12 +25,12 @@
 		</property>  
 	</bean>	
     	
-	<context:component-scan base-package="com.bmhz.platform.wmm.web.interceptor"/>
+	<context:component-scan base-package="com.bmhz.platform.wmm.web.controller"/>
 	<mvc:annotation-driven />
    
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/manager/**"/>              
+			<mvc:mapping path="/bm/**"/>              
 			<bean class="com.bmhz.platform.wmm.web.interceptor.ManagerInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>

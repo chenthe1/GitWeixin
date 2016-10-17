@@ -40,5 +40,4 @@ public class ManagerInterceptor implements HandlerInterceptor{
 			return false;
 		}
 	}
-
 }

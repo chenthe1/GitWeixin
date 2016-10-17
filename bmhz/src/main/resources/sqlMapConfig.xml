@@ -28,7 +28,7 @@
    		 <typeAlias alias="Weixin"  type="com.bmhz.platform.wmm.model.WeixinModel" />
     </typeAliases>
     <mappers>
-    	<mapper resource="om/bmhz/platform/wmm/dao/impl/WeixinMapper.xml"/>
+    	<mapper resource="com/bmhz/platform/wmm/dao/impl/WeixinMapper.xml"/>
     </mappers>
     
     <!-- <typeAliases>

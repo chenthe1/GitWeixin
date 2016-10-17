@@ -26,7 +26,8 @@ import com.bmhz.platform.wmm.service.WeixinService;
  * @author 陈升平
  * Notes: WeixinController.java 2016-10-14 下午14:56:14 CHENSP
  */
-@Controller()
+@Controller
+//  @RequestMapping("/weixin.do")
 public class WeixinController {
 	
 	private static final String TOKEN = "chenspTest";
@@ -36,9 +37,10 @@ public class WeixinController {
 	@Resource(name="weixinService")
 	private WeixinService weixinService;
 	
-	@RequestMapping(value="/test",method=RequestMethod.GET,produces="text/html;charset=UTF-8")
+	@RequestMapping(value="/bm/test",method=RequestMethod.GET,produces="text/html;charset=UTF-8")
 	@ResponseBody
 	public String test(HttpServletRequest request){
+		System.out.println("ddddddddddddddddddddd");
 		return weixinService.getWeixinById(2);
 	}
 	
@@ -111,9 +113,10 @@ public class WeixinController {
 		}
 	}
 	
-	
 	/**
-	 * 根据token计算signature验证是否为weixin服务端发送的消息
+	 * 根据token计算signature验证是否为微信服务端发送的消息
+	 * @param request
+	 * @return
 	 */
 	private static boolean checkWeixinReques(HttpServletRequest request){
 		String signature = request.getParameter("signature");

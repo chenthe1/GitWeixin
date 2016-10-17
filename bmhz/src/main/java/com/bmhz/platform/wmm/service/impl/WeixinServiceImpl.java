@@ -6,16 +6,20 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.bmhz.platform.wmm.dao.WeixinDao;
 import com.bmhz.platform.wmm.model.WeixinModel;
 import com.bmhz.platform.wmm.service.WeixinService;
 
+@Component
 @Service("weixinService")
 public class WeixinServiceImpl implements WeixinService{
 	
-	@Resource(name="weixinDao")
+	@Autowired
 	private WeixinDao weixinDao;
 	
 	/**
@@ -23,6 +27,7 @@ public class WeixinServiceImpl implements WeixinService{
 	 * @param studentid 学生编号
 	 * @return 以字符串形式返回老师留言信息
 	 */
+	// @Scheduled(cron = "5/* * * * * ?")
 	public String getWeixinById(int weixinId){
 		StringBuilder sb = new StringBuilder();
 		WeixinModel weixinModel = weixinDao.findWeixinById(weixinId);
@@ -44,6 +49,18 @@ public class WeixinServiceImpl implements WeixinService{
 			}*/	
 		}
 		return sb.toString();
+	}
+	
+	// @Scheduled(cron = "*/4 * * * * ?")
+	public void getWeixinByIdssTest(){
+		int weixinId = 1;
+		StringBuilder sb = new StringBuilder();
+		WeixinModel weixinModel = weixinDao.findWeixinById(weixinId);
+		if(weixinModel == null){
+			sb.append("您好，未找到编号为").append(weixinId).append("的学生！");
+		}else{
+			sb.append("您好，编号为").append(weixinId).append("的学生(").append(weixinModel.getName());
+		}
 	}
 
 }
