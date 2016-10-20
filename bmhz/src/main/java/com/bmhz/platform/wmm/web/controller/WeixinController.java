@@ -1,21 +1,23 @@
 package com.bmhz.platform.wmm.web.controller;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bmhz.platform.util.ValidationUtil;
 import com.bmhz.platform.util.WeixinUtil;
 import com.bmhz.platform.wmm.model.Message;
 import com.bmhz.platform.wmm.model.Reply;
+import com.bmhz.platform.wmm.model.WeixinModel;
 import com.bmhz.platform.wmm.service.WeixinService;
 
 /**
@@ -29,8 +31,12 @@ import com.bmhz.platform.wmm.service.WeixinService;
  * Notes: WeixinController.java 2016-10-14 下午14:56:14 CHENSP
  */
 @Controller
-//  @RequestMapping("/weixin.do")
 public class WeixinController {
+	
+	/**
+	 *  LOG
+	 */
+	private Logger logger = Logger.getLogger(WeixinController.class);
 	
 	private static final String TOKEN = "chenspTest";
 	
@@ -47,8 +53,11 @@ public class WeixinController {
 		return weixinService.getWeixinById(2)+"DFFFFFFFFFDD";
 	}
 	
-	
-	//接收微信公众号接收的消息，处理后再做相应的回复
+	/**
+	 * 接收微信公众号接收的消息，处理后再做相应的回复
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping(value="/weixin",method=RequestMethod.POST,produces="text/html;charset=UTF-8")
 	@ResponseBody
 	public String replyMessage(HttpServletRequest request){
@@ -56,6 +65,19 @@ public class WeixinController {
 		if (checkWeixinReques(request)) {
 			Map<String, String> requestMap = WeixinUtil.parseXml(request);
 			Message message = WeixinUtil.mapToMessage(requestMap);
+			logger.error("--------------------------AAAAAAA------------------------------");
+			// 保存和取消微信相关数据
+			if(message.getEvent().equals("subscribe")){
+				logger.error("------------------------AA--保存和------------------------------");
+				this.createWeixinInfo(message);
+				logger.error("------------------------BB--保存和------------------------------");
+			}else if(message.getEvent().equals("unsubscribe")){
+				logger.error("-----------------------AA---取消微信------------------------------");
+				weixinService.deleteWeixinById(message.getFromUserName());
+				logger.error("-----------------------BB---取消微信------------------------------");
+			}
+			logger.error("--------------------------BBBBBBBBBBB-----------------------------");
+			
 			// weixinService.addMessage(message); //保存接受消息到数据库
 			String replyContent = Reply.WELCOME_CONTENT;
 			String type = message.getMsgType();
@@ -100,6 +122,30 @@ public class WeixinController {
 		}else{ 
 			return "error";
 		}
+	}
+	
+	/**
+	 * 创建绑定微信用户数据 
+	 * @return
+	 */
+	private boolean createWeixinInfo(Message message) {
+		logger.error("--------------------------AA------------------------------");
+		if(!ValidationUtil.isEmpty(message.getFromUserName())){
+			logger.error("--------------------------BB------------------------------"+message.getFromUserName()+"****");
+			if(!weixinService.getWeixinIsExistById(message.getFromUserName())){
+				logger.error("--------------------------CC------------------------------");
+				WeixinModel weixinModel = new WeixinModel();
+				weixinModel.setOpenId(message.getFromUserName());
+				weixinModel.setName(message.getFromUserName());
+				weixinModel.setCreateTime(message.getCreateTime());
+				// weixinModel.setUnionId(unionId);
+				weixinService.createWeixinInfo(weixinModel);
+				logger.error("--------------------------DD------------------------------");
+				return true;
+			}
+			logger.error("--------------------------E------------------------------");
+		}
+		return false;
 	}
 	
 	/**

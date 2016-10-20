@@ -10,23 +10,24 @@
 	</select> 
 	
 	<insert id="createWeixinInfo" parameterType="com.bmhz.platform.wmm.model.WeixinModel">
-		insert into t_weixin_list(id, openId, name, createTime, updateTime, status) 
-		values (#{id}, #{openId}, #{name}, #{createTime}, #{updateTime}, #{status})
+		insert into t_weixin_list(id, openId, name, createTime, status) 
+		values (#{id}, #{openId}, #{name}, #{createTime}, #{status})
 	</insert>
 	
 	<!-- 取消微信号关注 -->
-	<update id="deleteWeixinById" parameterType="com.bmhz.platform.wmm.model.WeixinModel">
-		update t_weixin_list set (status = #{status}) where id = #{id} 
+	<update id="deleteWeixinById" parameterType="String">
+		update t_weixin_list set status = 0 where id = #{id} 
 	</update>
 	
 	<!-- 判断微信号是否已存在 -->
-	<select id="getWeixinById" parameterType="int" >
-		select id from t_weixin_list where id = #{id} 
+	<select id="getWeixinIsExistById" parameterType="String" resultMap="weixinMap">
+		select openId from t_weixin_list where openId = #{openId} 
 	</select>
 	
 	<resultMap type="Weixin" id="weixinMap">
 		<id property="id" column="id"/>  
 		<result property="openId" column="openId"/>  
+		<result property="unionId" column="unionId"/>  
 		<result property="name" column="name"/>
 		<result property="createTime" column="createTime"/>
 		<result property="updateTime" column="updateTime"/>

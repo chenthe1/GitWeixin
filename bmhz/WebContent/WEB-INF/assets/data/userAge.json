@@ -1,0 +1,34 @@
+﻿{
+    "message":"请求成功",
+    "result":[
+        {
+            "age_count":162,
+            "age_range":"18-24",
+            "count_date":"20161011",
+            "count_type":1,
+            "partner_no":"025xw000141"
+        },
+        {
+            "age_count":141,
+            "age_range":"45以上",
+            "count_date":"20161011",
+            "count_type":1,
+            "partner_no":"025xw000141"
+        },
+        {
+            "age_count":462,
+            "age_range":"25-44",
+            "count_date":"20161011",
+            "count_type":1,
+            "partner_no":"025xw000141"
+        },
+        {
+            "age_count":55,
+            "age_range":"18以下",
+            "count_date":"20161011",
+            "count_type":1,
+            "partner_no":"025xw000141"
+        }
+    ],
+    "state":10000
+}

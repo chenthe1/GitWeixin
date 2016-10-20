@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>百米盒子</title>
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body ontouchstart>
+    <!-- 页头s -->
+    <!-- <header class="header">
+        <div class="icon-arrow-left">&nbsp;</div>
+        <div class="head-title">设备管理</div>
+        <div class="clear"></div>
+    </header> -->
+    <!-- 页头e -->
+
+    <!-- 容器s -->
+    <div class="container" id="container">
+        <!-- 添加按钮s -->
+        <section class="weui-cells">
+            <a class="weui-cell weui-cell_access" href="javascript:;" id="btnAdd">
+                <div class="weui-cell__hd">
+                    <span class="icon icon-small"><span class="icon-plus"></span></span>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>绑定设备</p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+        </section>
+        <!-- 添加按钮e -->
+
+        <!-- 商铺列表s -->
+        <section class="weui-cells" id="shopList">
+            <a class="weui-cell weui-cell_access" href="javascript:;">
+                <div class="weui-cell__hd">
+                    <span class="icon icon-small"><span class="icon-desktop"></span></span>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>麦当劳</p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+        </section>
+        <!-- 商铺列表e -->
+
+        <!-- 弹出表单s -->
+        <section>
+            <div class="weui-mask" id="iosMask" style="display:none"></div>
+            <div class="weui-actionsheet weui-actionsheet_toggle" id="iosActionsheet" style="display:none">
+                <div class="weui-actionsheet__menu">
+                    <!-- <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label">门店名称</label></div>
+                        <div class="weui-cell__bd arrow-down">
+                            <input type="text" name="name" class="weui-input" placeholder="请输入店名" data-rule="name" data-msg="门店1-31位" required>
+                        </div>
+                    </div> -->
+                    <form id="form">
+                        <div class="weui-cell weui-cell_vcode">
+                            <div class="weui-cell__hd">
+                                <label class="weui-label">门店名称</label>
+                            </div>
+                            <div class="weui-cell__bd">
+                                <input type="hidden" name="id" placeholder="店铺id" data-type="number">
+                                <input type="text" name="name" class="weui-input" placeholder="请输入店名" data-rule="name" data-msg="门店1-31位" required>
+                            </div>
+                            <div class="weui-cell__ft dropdown">
+                                <a href="javascript:;" class="dropdown-btn arrow-down dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                <ul class="dropdown-menu pull-right" id="shopMenu">
+                                    <li><a href="javacript:;" class="shop">麦当劳</a></li>
+                                    <li><a href="javacript:;" class="shop">肯德基</a></li>
+                                    <li><a href="javacript:;" class="shop">周黑鸭</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__hd"><label class="weui-label">绑定设备</label></div>
+                            <div class="weui-cell__bd">
+                                <input type="text" name="mac" class="weui-input" placeholder="请输入设备MAC" data-rule="mac" data-msg="设备1-17位" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="weui-actionsheet__action">
+                    <div class="weui-actionsheet__cell" id="btnCancel">取消</div>
+                    <div class="weui-actionsheet__cell" id="btnSubmit">确定</div>
+                </div>
+            </div>
+        </section>
+        <!-- 弹出表单e -->
+    </div>
+    <!-- 容器e -->
+
+    <!-- 页尾s -->
+    <footer>&nbsp;</footer>
+    <!-- 页尾e -->
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/pages/device.js"></script>
+</body>
+</html>

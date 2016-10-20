@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>百米盒子</title>
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/js/plugins/slider/slider.css">
+</head>
+<body ontouchstart>
+    <!-- 页头s -->
+    <!-- <header class="header">
+        <div class="icon-arrow-left">&nbsp;</div>
+        <div class="head-title">设备管理详情</div>
+        <div class="clear"></div>
+    </header> -->
+    <!-- 页头e -->
+
+    <!-- 容器s -->
+    <div class="container" id="container">
+        <!-- 店铺信息s -->
+        <section class="weui-cells">
+            <a class="weui-cell weui-cell_access" href="javascript:;" id="shop">
+                <div class="weui-cell__hd">
+                    <span class="icon icon-small"><span class="icon-desktop"></span></span>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>店铺名称</p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+        </section>
+        <!-- 店铺信息e -->
+
+        <!-- 商铺列表s -->
+        <section class="weui-cells" id="devList">
+            <a class="weui-cell weui-cell_access" href="javascript:;">
+                <div class="weui-cell__hd">
+                    <span class="icon icon-small"><span class="icon-phone"></span></span>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>麦当劳</p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+        </section>
+        <!-- 商铺列表e -->
+
+        <!-- 修改商铺名称s -->
+        <section class="shop-name">
+            <div id="nameDialog" style="display: none;">
+                <div class="weui-mask"></div>
+                <div class="weui-dialog">
+                    <div class="weui-dialog__hd"><strong class="weui-dialog__title">店铺名称</strong></div>
+                    <div class="weui-dialog__bd">
+                        <div class="weui-cell">
+                            <div class="weui-cell__hd"></div>
+                            <div class="weui-cell__bd">
+                                <input type="text" name="name" class="weui-input" placeholder="请输入门店名称">
+                            </div>
+                            <div class="weui-cell__ft">
+                                <i class=""></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-dialog__ft">
+                        <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
+                        <a href="javascript:;" class="weui-dialog__btn" id="btnName">确定</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 修改商铺名称e -->
+
+        <!-- 探测范围s -->
+        <section class="search-range">
+            <div id="rangeDialog" style="display: none;">
+                <div class="weui-mask"></div>
+                <div class="weui-dialog">
+                    <div class="weui-dialog__hd"><strong class="weui-dialog__title">探测范围</strong></div>
+                    <div class="weui-dialog__bd">
+                        <p>范围越大,探测的人流量越多</p>
+                        <input type="text" name="range" id="slider" data-type="number">
+                        <p id="sliderVal">0</p>
+                    </div>
+                    <div class="weui-dialog__ft">
+                        <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
+                        <a href="javascript:;" class="weui-dialog__btn" id="btnRange">确定</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 探测范围e -->
+    </div>
+    <!-- 容器e -->
+
+    <!-- 页尾s -->
+    <footer>&nbsp;</footer>
+    <!-- 页尾e -->
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/plugins/slider/slider.js"></script>
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/pages/devDetail.js"></script>
+</body>
+</html>

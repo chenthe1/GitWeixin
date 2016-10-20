@@ -2,6 +2,7 @@ package com.bmhz.platform.wmm.dao;
 
 import org.springframework.stereotype.Component;
 
+import com.bmhz.platform.util.ValidationUtil;
 import com.bmhz.platform.wmm.model.WeixinModel;
 
 /**
@@ -57,8 +58,12 @@ public class WeixinDao extends BaseDao{
 	 * @param weixinId OpenID
 	 * @return  
 	 */
-	public boolean getWeixinById(String weixinId){
-		return this.readSqlSession.selectOne("com.bmhz.platform.wmm.dao.WeixinDao.getWeixinById",weixinId);
+	public boolean getWeixinIsExistById(String openId){
+		WeixinModel weixin = this.readSqlSession.selectOne("com.bmhz.platform.wmm.dao.WeixinDao.getWeixinIsExistById",openId);
+		if(!ValidationUtil.isEmpty(weixin.getOpenId())){
+			return true;
+		}
+		return false; 
 	}
 
 }

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>百米盒子</title>
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/js/plugins/datetime/datetime.css">
+</head>
+<body ontouchstart>
+    <!-- 页头s -->
+    <!-- <header class="header">
+        <div class="icon-arrow-left">&nbsp;</div>
+        <div class="head-title">顾客数据</div>
+        <div class="clear"></div>
+    </header> -->
+    <!-- 页头e -->
+
+    <!-- 容器s -->
+    <div class="container" id="container">
+        <!-- 店铺导航s -->
+        <nav class="weui-flex">
+            <div class="weui-flex__item"><div class="placeholder bg-primary">店铺名称</div></div>
+            <div class="weui-flex__item">
+                <div class="placeholder bg-primary">
+                    <input type="text" class="mobiscroll" id="timeRange" placeholder="选择日期" readonly>
+                </div>
+            </div>
+        </nav>
+        <!-- 店铺导航e -->
+
+        <!-- 客流信息s -->
+        <section class="user-track" id="track">
+            <a class="weui-cell weui-cell_access" href="javascript:;">
+                <div class="weui-cell__hd">苹果</div>
+                <div class="weui-cell__bd">
+                    <div class="weui-flex text-center">
+                        <div class="weui-flex__item">84:82:F4:15:BC:38</div>
+                        <div class="weui-flex__item">09:50</div>
+                    </div>
+                </div>
+                <div class="weui-cell__ft">50分钟</div>
+            </a>
+            <a class="weui-cell weui-cell_access" href="javascript:;">
+                <div class="weui-cell__hd">苹果苹果苹果苹果苹果</div>
+                <div class="weui-cell__bd">
+                    <div class="weui-flex text-center">
+                        <div class="weui-flex__item">84:82:F4:15:BC:38</div>
+                        <div class="weui-flex__item">09:50</div>
+                    </div>
+                </div>
+                <div class="weui-cell__ft">50分钟</div>
+            </a>
+            <!-- <table class="table" id="table">
+                <thead>
+                    <tr>
+                        <th>手机品牌</th>
+                        <th>手机MAC</th>
+                        <th>进店时间</th>
+                        <th>停留时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="active">
+                        <td width="30%">苹果</td>
+                        <td width="30%">84:82:F4:15:BC:38</td>
+                        <td width="20%">09:50</td>
+                        <td width="20%">50 分钟</td>
+                    </tr>
+                    <tr class="active">
+                        <td width="30%">华为</td>
+                        <td width="30%">84:82:F4:15:BC:38</td>
+                        <td width="20%">12:35</td>
+                        <td width="20%">37 分钟</td>
+                    </tr>
+                </tbody>
+            </table> -->
+        </section>
+        <!-- 客流信息e -->
+
+        <!-- 用户轨迹s -->
+        <section class="">
+            <div class="weui-mask" id="iosMask" style="display:none"></div>
+            <div class="weui-actionsheet weui-actionsheet_toggle" id="iosActionsheet" style="display:none">
+                <div class="weui-actionsheet__menu">
+                   <div class="weui-cell">
+                        <div class="weui-cell__hd">苹果苹果苹果苹果苹果</div>
+                        <div class="weui-cell__bd">
+                            <div class="weui-flex text-center">
+                                <div class="weui-flex__item">84:82:F4:15:BC:38</div>
+                                <div class="weui-flex__item">09:50</div>
+                            </div>
+                        </div>
+                        <div class="weui-cell__ft">50分钟</div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label class="weui-label">绑定设备</label></div>
+                        <div class="weui-cell__bd">
+                            <input type="text" name="mac" class="weui-input" placeholder="请输入设备MAC" data-rule="mac" data-msg="设备1-17位" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-actionsheet__action">
+                    <div class="weui-actionsheet__cell" id="btnCancel">取消</div>
+                    <div class="weui-actionsheet__cell" id="btnSubmit">确定</div>
+                </div>
+            </div>
+        </section>
+        <!-- 用户轨迹e -->
+    </div>
+    <!-- 容器e -->
+
+    <!-- 页尾s -->
+    <footer>&nbsp;</footer>
+    <!-- 页尾e -->
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/plugins/datetime/datetime.js"></script>
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/pages/cusData.js"></script>
+</body>
+</html>

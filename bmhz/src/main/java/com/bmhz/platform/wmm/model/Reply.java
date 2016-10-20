@@ -8,8 +8,16 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * 回复用户的消息
- * @author lizy
+ * 百米盒子微信公众号项目
+ *
+ * File: Reply.java
+ * 
+ * Copyright (C): 2016
+ *
+ * Description:  自动回复信息类
+ *
+ * @author 陈升平
+ * Notes: Reply.java 2016-10-19 下午18:56:14 CHENSP
  */
 public class Reply implements Serializable {
 
@@ -17,8 +25,8 @@ public class Reply implements Serializable {
 	public static final String MUSIC = "music";
 	public static final String NEWS = "news";
 	
-	public static final String ERROR_CONTENT = "查询失败，请检查你的回复是否正确。\n查询最近考试情况请回复：学号_考试（如：3021_考试）\n 查询最近最近10次考试情况请回复：学号_考试历史（如：3021_考试历史）\n 查询老师留言情况请回复：学号_留言（如：3021_留言）\n查询老师留言记录（最近10次）情况请回复：学号_留言历史（如：3021_留言历史）\n\n 查询班级动态情况请回复：学号_动态（如：3021_动态）\n查询班级动态记录（最近10次）情况请回复：学号_动态历史（如：3021_动态历史）\n";
-	public static final String WELCOME_CONTENT = "欢迎订阅爱学校，你可以回复指定内容来了解学生考试情况，老师留言和班级动态。\n查询最近考试情况请回复：学号_考试（如：3021_考试）\n 查询最近最近10次考试情况请回复：学号_考试历史（如：3021_考试历史）\n 查询老师留言情况请回复：学号_留言（如：3021_留言）\n查询老师留言记录（最近10次）情况请回复：学号_留言历史（如：3021_留言历史）\n\n 查询班级动态情况请回复：学号_动态（如：3021_动态）\n查询班级动态记录（最近10次）情况请回复：学号_动态历史（如：3021_动态历史）\n";
+	public static final String ERROR_CONTENT = "查询失败，请检查你的回复是否正确。\n查询百米盒子正在开发中\n";
+	public static final String WELCOME_CONTENT = "欢迎订阅百米盒子公众号!\n 小伙伴们正在开发中!\n";
 	
 	@XStreamOmitField
 	private int id;//数据库存储id
@@ -56,7 +64,7 @@ public class Reply implements Serializable {
     private List<Article> articles;
 
 	public static void main(String[] args) {
-		System.out.println("http://mmsns.qpic.cn/mmsns/UKMLIAeREF9IyZGhfvF8f0CAKDzEvXwCibLKUM4kmsfGnZvFM7EJlrg/0".length());
+		System.out.println("测试通过".length());
 	}
 	
 	public int getId() {
@@ -99,7 +107,6 @@ public class Reply implements Serializable {
 		this.msgType = msgType;
 	}
 
-
 	public String getContent() {
 		return content;
 	}
@@ -139,8 +146,4 @@ public class Reply implements Serializable {
 	public void setArticles(List<Article> articles) {
 		this.articles = articles;
 	}
-
-    
-	
-	
 }

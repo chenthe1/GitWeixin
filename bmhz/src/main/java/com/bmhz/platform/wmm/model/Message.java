@@ -2,12 +2,19 @@ package com.bmhz.platform.wmm.model;
 
 import java.io.Serializable;
 import java.util.Date;
-
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * 微信消息（服务端接收到的）
- * @author lizy
+ * 百米盒子微信公众号项目
+ *
+ * File: Reply.java
+ * 
+ * Copyright (C): 2016
+ *
+ * Description:  微信消息（服务端接收到的）
+ *
+ * @author 陈升平
+ * Notes: Reply.java 2016-10-19 下午18:56:14 CHENSP
  */
 public  class Message implements Serializable{
 	/**
@@ -48,7 +55,6 @@ public  class Message implements Serializable{
     // 消息链接  (链接消息专有)
     private String url;
     
-    
     //地理位置纬度 Location_X(地理位置专有)
     private String locationX;
     //地理位置经度 Location_Y(地理位置专有)
@@ -58,12 +64,10 @@ public  class Message implements Serializable{
     // 地理位置信息  (地理位置专有)
     private String label;
     
-    
     //事件类型，subscribe(订阅)、unsubscribe(取消订阅)、CLICK(自定义菜单点击事件) （事件推送专有）
     private String event;
     //事件KEY值，与自定义菜单接口中KEY值对应（事件推送专有）
     private String eventKey;
-    
     
 	public int getId() {
 		return id;
@@ -167,5 +171,4 @@ public  class Message implements Serializable{
 	public void setEventKey(String eventKey) {
 		this.eventKey = eventKey;
 	}
-    
 }

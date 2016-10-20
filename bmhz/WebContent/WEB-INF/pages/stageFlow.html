@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>每日客流</title>
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/js/plugins/datetime/datetime.css">
+</head>
+<body ontouchstart>
+    <!-- 页头s -->
+    <!-- <header class="header">
+        <div class="icon-arrow-left">&nbsp;</div>
+        <div class="head-title">每日客流</div>
+        <div class="clear"></div>
+    </header> -->
+    <!-- 页头e -->
+
+    <!-- 容器s -->
+    <div class="container" id="container">
+        <!-- 店铺导航s -->
+        <nav class="weui-flex">
+            <div class="weui-flex__item"><div class="placeholder bg-primary">店铺名称</div></div>
+            <div class="weui-flex__item">
+                <div class="placeholder bg-primary">
+                    <input type="text" class="mobiscroll" id="timeRange" placeholder="选择日期" readonly>
+                </div>
+            </div>
+        </nav>
+        <!-- 店铺导航e -->
+
+        <!-- 客流信息s -->
+        <section>
+            <div class="cell cell-select">
+                <div class="cell-hd">
+                    <label class="cell-label">指标选择</label>
+                </div>
+                <div class="cell-bd">
+                    <select name="select" class="select" id="statType">
+                        <option value="1">人流量</option>
+                        <option value="2">客流量</option>
+                        <option value="3">新顾客</option>
+                        <option value="4">老顾客</option>
+                    </select>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="cell-hd">
+                    <label class="cell-label">对比</label>
+                </div>
+                <div class="cell-bd">
+                    <span class="radio-label">
+                        <input type="radio" name="radio" class="radio-check" value="7" checked>
+                        <i class="weui-icon-checked"></i>上周
+                    </span>
+                    <span class="radio-label">
+                        <input type="radio" name="radio" class="radio-check" value="30" >
+                        <i class="weui-icon-checked"></i>上月
+                    </span>
+                </div>
+            </div>
+        </section>
+        <!-- 客流信息e -->
+
+        <!-- 24小时折线图s -->
+        <section class="chart">
+            <div id="dayFlow" state="no" class="echart_box"></div>
+        </section>
+        <!-- 24小时折线图e -->
+
+        <!-- 一周折线图s -->
+        <section class="chart">
+            <div id="weekFlow" state="no" class="echart_box"></div>
+        </section>
+        <!-- 一周折线图e -->
+    </div>
+    <!-- 容器e -->
+
+    <!-- 页尾s -->
+    <footer>&nbsp;</footer>
+    <!-- 页尾e -->
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/plugins/echarts/echarts.js"></script>
+    <script src="../assets/js/plugins/datetime/datetime.js"></script>
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/pages/stageFlow.js"></script>
+</body>
+</html>

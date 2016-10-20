@@ -1,0 +1,13 @@
+﻿{
+    "message":"请求成功",
+    "result":[
+        {
+            "count_date":"20161011",
+            "count_type":1,
+            "partner_no":"025xw000141",
+            "time_range":"周日",
+            "user_flow_count":30
+        }
+    ],
+    "state":10000
+}

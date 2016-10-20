@@ -1,0 +1,27 @@
+﻿{
+    "message":"请求成功",
+    "result":[
+        {
+            "count_date":"20161012",
+            "count_type":30,
+            "edu_count":5873,
+            "edu_range":"大专",
+            "partner_no":"025xw000141"
+        },
+        {
+            "count_date":"20161012",
+            "count_type":30,
+            "edu_count":2938,
+            "edu_range":"高中及以下",
+            "partner_no":"025xw000141"
+        },
+        {
+            "count_date":"20161012",
+            "count_type":30,
+            "edu_count":6387,
+            "edu_range":"本科及以上",
+            "partner_no":"025xw000141"
+        }
+    ],
+    "state":10000
+}

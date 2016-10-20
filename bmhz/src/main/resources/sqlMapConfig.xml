@@ -25,30 +25,12 @@
     </settings>  
     
     <typeAliases>
-   		 <typeAlias alias="Weixin"  type="com.bmhz.platform.wmm.model.WeixinModel" />
+		<typeAlias alias="Weixin"  type="com.bmhz.platform.wmm.model.WeixinModel" />
+		<typeAlias alias="Shop"  type="com.bmhz.platform.wmm.model.ShopModel" />
     </typeAliases>
     <mappers>
-    	<mapper resource="com/bmhz/platform/wmm/dao/impl/WeixinMapper.xml"/>
+		<mapper resource="com/bmhz/platform/wmm/dao/impl/WeixinMapper.xml"/>
+		<mapper resource="com/bmhz/platform/wmm/dao/impl/ShopMapper.xml"/>
     </mappers>
     
-    <!-- <typeAliases>
-   		 <typeAlias alias="Message"  type="com.aixuexiao.model.Message" />
-   		 <typeAlias alias="Reply"  type="com.aixuexiao.model.Reply" />
-   		 <typeAlias alias="Article"  type="com.aixuexiao.model.Article" />
-   		 <typeAlias alias="Student"  type="com.aixuexiao.model.Student" />
-   		 <typeAlias alias="Classes"  type="com.aixuexiao.model.Classes" />
-   		 <typeAlias alias="Exam"  type="com.aixuexiao.model.Exam" />
-   		 <typeAlias alias="ExamMark"  type="com.aixuexiao.model.ExamMark" />
-   		 <typeAlias alias="StudentMessage"  type="com.aixuexiao.model.StudentMessage" />
-   		 <typeAlias alias="ClassesNews"  type="com.aixuexiao.model.ClassesNews" />
-	</typeAliases> -->
-    <!-- <mappers>
-    	<mapper resource="com/aixuexiao/dao/sqlmap/ReplyMapper.xml"/>
-    	<mapper resource="com/aixuexiao/dao/sqlmap/MessageMapper.xml"/>
-    	<mapper resource="com/aixuexiao/dao/sqlmap/StudentMapper.xml"/>
-    	<mapper resource="com/aixuexiao/dao/sqlmap/ExamMapper.xml"/>
-    	<mapper resource="com/aixuexiao/dao/sqlmap/StudentMessageMapper.xml"/>
-    	<mapper resource="com/aixuexiao/dao/sqlmap/ClassesNewsMapper.xml"/>
-    	<mapper resource="com/aixuexiao/dao/sqlmap/ClassesMapper.xml"/>
-    </mappers> -->
 </configuration>

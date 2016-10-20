@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>百米盒子</title>
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/js/plugins/datetime/datetime.css">
+</head>
+<body ontouchstart>
+    <!-- 页头s -->
+    <!-- <header class="header">
+        <div class="icon-arrow-left">&nbsp;</div>
+        <div class="head-title">每日客流</div>
+        <div class="clear"></div>
+    </header> -->
+    <!-- 页头e -->
+
+    <!-- 容器s -->
+    <div class="container" id="container">
+        <!-- 店铺导航s -->
+        <nav class="weui-flex">
+            <div class="weui-flex__item"><div class="placeholder bg-primary">店铺名称</div></div>
+            <div class="weui-flex__item">
+                <div class="placeholder bg-primary">
+                    <input type="text" class="mobiscroll" id="timeRange" placeholder="选择日期" readonly>
+                </div>
+            </div>
+        </nav>
+        <!-- 店铺导航e -->
+
+        <!-- 客流信息s -->
+        <section class="stat-customer">
+            <div class="grid-2">
+                <div class="grid-title">人流量</div>
+                <p class="grid-label" id="renFlow">50</p>
+            </div>
+            <div class="grid-2">
+                <div class="grid-title">客流量</div>
+                <p class="grid-label" id="keFlow">20</p>
+            </div>
+            <div class="grid-3">
+                <div class="grid-title">新顾客</div>
+                <p class="grid-label" id="newCustomer">10</p>
+            </div>
+            <div class="grid-3">
+                <div class="grid-title">老顾客</div>
+                <p class="grid-label" id="oldCustomer">15</p>
+            </div>
+            <div class="grid-3">
+                <div class="grid-title">当前顾客</div>
+                <p class="grid-label" id="curCustomer">30</p>
+            </div>
+            <div class="clear"></div>
+        </section>
+        <!-- 客流信息e -->
+
+        <!-- 24小时折线图s -->
+        <section class="chart">
+            <div id="dayFlow" state="no" class="echart_box"></div>
+        </section>
+        <!-- 24小时折线图e -->
+
+        <!-- 一周折线图s -->
+        <section class="chart">
+            <div id="weekFlow" state="no" class="echart_box"></div>
+        </section>
+        <!-- 一周折线图e -->
+
+        <!-- 手机品牌饼图s -->
+        <section class="chart">
+            <div id="phoneBrand" state="no" class="echart_box"></div>
+        </section>
+        <!-- 手机品牌饼图e -->
+    </div>
+    <!-- 容器e -->
+
+    <!-- 页尾s -->
+    <footer>&nbsp;</footer>
+    <!-- 页尾e -->
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/plugins/echarts/echarts.js"></script>
+    <script src="../assets/js/plugins/datetime/datetime.js"></script>
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/pages/dayFlow.js"></script>
+</body>
+</html>

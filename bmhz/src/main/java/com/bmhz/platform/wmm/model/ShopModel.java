@@ -24,7 +24,7 @@ public class ShopModel implements Serializable {
 	private Date createTime;
 	private Date updateTime;
 	private int status;
-	private List<ShopDevModel> shopDevModel;
+	// private List<ShopDevModel> shopDevModel;
 	
 	public int getId() {
 		return id;
@@ -62,10 +62,10 @@ public class ShopModel implements Serializable {
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	public List<ShopDevModel> getShopDevModel() {
+	/*public List<ShopDevModel> getShopDevModel() {
 		return shopDevModel;
 	}
 	public void setShopDevModel(List<ShopDevModel> shopDevModel) {
 		this.shopDevModel = shopDevModel;
-	}
+	}*/
 }

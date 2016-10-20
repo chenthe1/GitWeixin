@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bmhz.platform.wmm.dao.ShopDao">
+	
+	<select id="getShopById" parameterType="int" resultMap="ShopMap" >
+	   select id, weixinId, name, createTime, updateTime, status 
+	   from t_shop_list 
+	   where id = #{id} 
+	</select> 
+	
+	<insert id="createShopInfo" parameterType="com.bmhz.platform.wmm.model.ShopModel">
+		insert into t_shop_list(id, weixinId, name, createTime, status) 
+		values (#{id}, #{weixinId}, #{name}, #{createTime}, #{status}) 
+	</insert>
+	
+	<update id="updateShopInfo" parameterType="com.bmhz.platform.wmm.model.ShopModel">
+		update t_shop_list set weixinId = #{weixinId}, name = #{name}, status = #{status} 
+		where id = #{id} 
+	</update>
+	
+	<update id="deleteShopById" parameterType="String">
+		DELETE shop FROM  t_shop_list AS shop WHERE id = #{id} 
+	</update>
+	
+	<!-- 判断是否已存在 -->
+	<select id="getShopIsExistById" parameterType="String" resultMap="ShopMap">
+		select id from t_shop_list where id = #{id} 
+	</select>
+	
+	<resultMap type="Shop" id="ShopMap">
+		<id property="id" column="id"/>  
+		<result property="weixinId" column="weixinId"/>  
+		<result property="name" column="name"/>
+		<result property="createTime" column="createTime"/>
+		<result property="updateTime" column="updateTime"/>
+		<result property="status" column="status"/>
+	</resultMap>
+</mapper>

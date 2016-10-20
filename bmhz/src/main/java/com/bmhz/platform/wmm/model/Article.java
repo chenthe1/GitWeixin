@@ -4,8 +4,16 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**
- * 图文消息
- * @author lizy
+ * 百米盒子微信公众号项目
+ *
+ * File: Reply.java
+ * 
+ * Copyright (C): 2016
+ *
+ * Description:  图文消息
+ *
+ * @author 陈升平
+ * Notes: Reply.java 2016-10-19 下午19:56:14 CHENSP
  */
 public class Article {
 	
@@ -38,8 +46,6 @@ public class Article {
 		this.picUrl = picUrl;
 		this.url = url;
 	}
-	
-	
 	
 	public int getId() {
 		return id;
@@ -89,7 +95,4 @@ public class Article {
 	public void setReply(Reply reply) {
 		this.reply = reply;
 	}
-	
-    
-    
 }

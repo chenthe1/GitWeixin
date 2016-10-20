@@ -24,6 +24,7 @@ public class WeixinModel implements Serializable {
 	private int id; 
 	// 微信标识 
 	private String openId;
+	private String unionId;
 	private String name;
 	private Date createTime;
 	private Date updateTime;
@@ -42,6 +43,12 @@ public class WeixinModel implements Serializable {
 	}
 	public void setOpenId(String openId) {
 		this.openId = openId;
+	}
+	public String getUnionId() {
+		return unionId;
+	}
+	public void setUnionId(String unionId) {
+		this.unionId = unionId;
 	}
 	public String getName() {
 		return name;

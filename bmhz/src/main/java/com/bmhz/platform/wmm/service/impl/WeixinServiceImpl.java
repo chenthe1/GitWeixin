@@ -7,7 +7,6 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -83,8 +82,8 @@ public class WeixinServiceImpl implements WeixinService{
 	 * @param weixinId OpenID
 	 * @return  
 	 */
-	public boolean getWeixinById(String weixinId){
-		return weixinDao.getWeixinById(weixinId);
+	public boolean getWeixinIsExistById(String openId){
+		return weixinDao.getWeixinIsExistById(openId);
 	}
 
 }

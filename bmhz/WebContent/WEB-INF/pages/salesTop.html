@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh-CN">
+<!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <title>百米生活</title>
+        <link rel="shortcut icon" href="../assets/img/favicon.ico" />
+        <link rel="stylesheet" href="../assets/js/plugins/bootstrap/bootstrap.css" />
+        <link rel="stylesheet" href="../assets/js/plugins/nouislider/nouislider.css" />
+        <link rel="stylesheet" href="../assets/js/plugins/toastr/toastr.css" />
+        <link rel="stylesheet" href="../assets/css/fonts.css" />
+        <link rel="stylesheet" href="../assets/css/layout.css" />
+    </head>
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+        <!-- BEGIN HEADER -->
+        <div id="header" class="page-header navbar navbar-fixed-top"></div>
+        <!-- END HEADER -->
+        <div class="clearfix"> </div>
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <div id="sidebar" class="page-sidebar-wrapper"></div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <h3 class="page-title"> 设备详情
+                        <small></small>
+                    </h3>
+                    <!-- BEGIN TABLE -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN SAMPLE FORM PORTLET-->
+                            <div class="portlet light">
+                                <!-- begin device param -->
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-settings font-dark"></i>
+                                        <span class="caption-subject font-dark sbold">设备参数</span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <form class="form-horizontal" id="formParam" role="form">
+                                        <div class="form-body row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">设备名称:</label>
+                                                    <div class="col-md-9">
+                                                        <input type="hidden" name="router_id">
+                                                        <input type="text" class="form-control" name="router_name" maxlength="31" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-t-40">
+                                                    <label class="col-md-3 control-label p-t-0">ssid限速:</label>
+                                                    <div class="col-md-9 p-b-10">
+                                                        <div id="speedLimit" class="noUi-success"></div>
+                                                        <input type="hidden" id="speed" name="ssid_bandwidth" data-type="number">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">认证开启:</label>
+                                                    <div class="col-md-9">
+                                                        <div class="mt-checkbox-inline">
+                                                            <label class="mt-checkbox">
+                                                                <input type="checkbox" id="token" value="1" name="award_switch" data-type="switch">
+                                                                <span></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">认证模板:</label>
+                                                    <div class="col-md-9">
+                                                        <select class="form-control" id="tpList" name="template_id" data-type="number"></select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">网络名称:</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="ssid" maxlength="31" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <div class="row">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn green">应&nbsp;用</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- end device param -->
+                                <!-- begin device info -->
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-settings font-dark"></i>
+                                        <span class="caption-subject font-dark sbold">设备信息</span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <form class="form-horizontal" id="formRouter" role="form">
+                                        <div class="form-body row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">上网方式:</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="con_type" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">MAC地址:</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="wan_mac" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">IP地址:</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="wan_ip" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">DNS:</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="wan_dns" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">网关:</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="wan_gateway" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">固件版本:</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" name="soft_ver" disabled>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- end device info -->
+                            </div>
+                            <!-- END SAMPLE FORM PORTLET-->
+                        </div>
+                    </div>
+                    <!-- END TABLE -->
+                </div>
+            </div>
+            <!-- END CONTENT -->
+            <!-- BEGIN QUICK SIDEBAR -->
+            <div id="quick"></div>
+            <!-- END QUICK SIDEBAR -->
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div id="footer" class="page-footer"></div>
+        <!-- END FOOTER -->
+        <!--[if lt IE 9]>
+            <script src="../assets/js/plugins/respond.min.js"></script>
+            <script src="../assets/js/plugins/excanvas.min.js"></script>
+        <![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/plugins/bootstrap/bootstrap.js"></script>
+        <script src="../assets/js/plugins/toastr/toastr.js"></script>
+        <script src="../assets/js/plugins/nouislider/nouislider.js"></script>
+        <script src="../assets/js/plugins/nouislider/wNumb.min.js"></script>
+        <script src="../assets/js/plugins/validate/validate.js"></script>
+        <!-- <script src="../assets/js/plugins/slimscroll/slimscroll.js"></script> -->
+        <!-- END CORE PLUGINS -->
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <script src="../assets/js/global.js"></script>
+        <script src="../assets/js/layout.js"></script>
+        <script src="../assets/js/common.js"></script>
+        <script src="../assets/js/blockui.js"></script>
+        <!-- END THEME LAYOUT SCRIPTS -->
+        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="../assets/js/pages/devDetail.js"></script>
+        <!-- END PAGE LEVEL SCRIPTS -->
+    </body>
+</html>

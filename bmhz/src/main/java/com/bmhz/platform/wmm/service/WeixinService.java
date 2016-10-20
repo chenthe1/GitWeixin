@@ -40,6 +40,6 @@ public interface WeixinService {
 	 * @param weixinId OpenID
 	 * @return  
 	 */
-	public abstract boolean getWeixinById(String weixinId);
+	public abstract boolean getWeixinIsExistById(String openId);
 	
 }

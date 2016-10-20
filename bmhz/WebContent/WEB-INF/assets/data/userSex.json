@@ -1,0 +1,14 @@
+﻿{
+    "message":"请求成功",
+    "result":[
+        {
+            "count_date":"20161011",
+            "count_type":1,
+            "female_count":378,
+            "male_count":442,
+            "partner_no":"025xw000141",
+            "unknown_count":0
+        }
+    ],
+    "state":10000
+}

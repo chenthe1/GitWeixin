@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>百米盒子</title>
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/js/plugins/slider/slider.css">
+</head>
+<body ontouchstart>
+    <!-- 页头s -->
+    <!-- <header class="header">
+        <div class="icon-arrow-left">&nbsp;</div>
+        <div class="head-title">设备详情更新</div>
+        <div class="clear"></div>
+    </header> -->
+    <!-- 页头e -->
+
+    <!-- 容器s -->
+    <div class="container" id="container">
+        <!-- 设备信息s -->
+        <section class="device-box">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">设备MAC</label></div>
+                <div class="weui-cell__bd">
+                    <input type="text" name="mac" class="weui-input" placeholder="abc123" disabled>
+                </div>
+            </div>
+            <div class="weui-cell weui-cell_access" id="btnRange">
+                <div class="weui-cell__hd"><label class="weui-label">探测范围</label></div>
+                <div class="weui-cell__bd">
+                    <input type="text" name="range" class="weui-input" placeholder="50" disabled>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </div>
+            <div class="weui-btn-area">
+                <a href="javascript:" class="weui-btn weui-btn_primary" id="btnDelete">删除设备</a>
+            </div>
+        </section>
+        <!-- 设备信息e -->
+
+        <!-- 探测范围s -->
+        <section class="search-range">
+            <div id="rangeDialog" style="display: none;">
+                <div class="weui-mask"></div>
+                <div class="weui-dialog">
+                    <div class="weui-dialog__hd"><strong class="weui-dialog__title">探测范围</strong></div>
+                    <div class="weui-dialog__bd">
+                        <p>范围越大,探测的人流量越多</p>
+                        <input type="text" name="range" id="slider" data-type="number">
+                        <p id="sliderVal">0</p>
+                    </div>
+                    <div class="weui-dialog__ft">
+                        <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
+                        <a href="javascript:;" class="weui-dialog__btn" id="btnSubmit">确定</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 探测范围e -->
+
+        <!-- 删除设备s -->
+        <section role="delete aciton">
+            <div id="delDialog" style="display: none;">
+                <div class="weui-mask"></div>
+                <div class="weui-dialog">
+                    <div class="weui-dialog__hd"><strong class="weui-dialog__title">弹窗标题</strong></div>
+                    <div class="weui-dialog__bd">确定删除设备吗？</div>
+                    <div class="weui-dialog__ft">
+                        <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">取消</a>
+                        <a href="javascript:;" class="weui-dialog__btn" id="btnDevice">确定</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 删除设备e -->
+    </div>
+    <!-- 容器e -->
+
+    <!-- 页尾s -->
+    <footer>&nbsp;</footer>
+    <!-- 页尾e -->
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/plugins/slider/slider.js"></script>
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/pages/devUpdate.js"></script>
+</body>
+</html>

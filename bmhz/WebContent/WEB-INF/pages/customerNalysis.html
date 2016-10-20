@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <title>百米盒子</title>
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body ontouchstart>
+    <!-- 页头s -->
+    <!-- <header class="header">
+        <div class="icon-arrow-left">&nbsp;</div>
+        <div class="head-title">顾客分析</div>
+        <div class="clear"></div>
+    </header> -->
+    <!-- 页头e -->
+
+    <!-- 容器s -->
+    <div class="container" id="container">
+        <!-- 导航s -->
+        <nav class="weui-flex">
+            <div class="weui-flex__item"><div class="placeholder bg-primary">店铺名称</div></div>
+            <div class="weui-flex__item">
+                <ul class="weui-flex">
+                    <li class="weui-flex__item time-range on" data-type="1">昨天</li>
+                    <li class="weui-flex__item time-range" data-type="7">最近7天</li>
+                    <li class="weui-flex__item time-range" data-type="30">最近30天</li>
+                </ul>
+            </div>
+        </nav>
+        <!-- 导航e -->
+
+        <!-- 顾客性别s -->
+        <section class="chart">
+            <div id="userSex" class="echart_box" state="no" ></div>
+        </section>
+        <!-- 顾客性别e -->
+
+        <!-- 客流量趋势s -->
+        <section class="chart">
+            <div id="userFlow" class="echart_box" state="no" ></div>
+        </section>
+        <!-- 客流量趋势e -->
+
+        <!-- 客流来源s -->
+        <section class="chart">
+            <div id="userSource" class="echart_box" state="no" ></div>
+        </section>
+        <!-- 客流来源e -->
+
+        <!-- 顾客停留时长s -->
+        <section class="chart">
+            <div id="userStayed" class="echart_box" state="no" ></div>
+        </section>
+        <!-- 顾客停留时长e -->
+
+        <!--顾客学历s-->
+        <section class="chart">
+            <div id="userEdu" class="echart_box" state="no" ></div>
+        </section>
+        <!--顾客学历e-->
+
+        <!--顾客年龄s-->
+        <section class="chart">
+            <div id="userAge" class="echart_box" state="no" ></div>
+        </section>
+        <!--顾客年龄e-->
+
+        <!-- 顾客手机s -->
+        <section class="chart">
+            <div id="userPhone" class="echart_box" state="no" ></div>
+        </section>
+        <!-- 顾客手机e -->
+    </div>
+    <!-- 容器e -->
+
+    <!-- 页尾s -->
+    <footer>&nbsp;</footer>
+    <!-- 页尾e -->
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/plugins/echarts/echarts.js"></script>
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/pages/cusNalysis.js"></script>
+</body>
+</html>

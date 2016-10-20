@@ -1,0 +1,16 @@
+﻿{
+    "message":"请求成功",
+    "result":[
+        {
+            "count_date":"20161011",
+            "count_type":1,
+            "partner_no":"025xw000141",
+            "user_ren_count":88,
+            "user_ke_count":34,
+            "user_new_count":19,
+            "user_old_count":22,
+            "user_cur_count":50
+        }
+    ],
+    "state":10000
+}
